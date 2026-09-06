@@ -1,6 +1,6 @@
 # Original Graphviz starters
 
-`assets/graphviz/`의 편집 가능한 DOT를 Graphviz 15.1.1 Windows portable로 렌더링한 예시입니다. 모두 구조 설명용 가상 데이터이며 회사·제품·성능에 관한 실제 주장이 아닙니다.
+`assets/graphviz/`의 편집 가능한 DOT를 Graphviz 15.1.1 Windows portable로 렌더링한 예시입니다. GitHub 다크·라이트 모드에서 모두 읽히도록 이 미리보기 SVG에만 흰 배경을 적용했습니다. 모두 구조 설명용 가상 데이터이며 회사·제품·성능에 관한 실제 주장이 아닙니다.
 
 | 상황 | DOT | 렌더 결과 | 엔진 |
 | --- | --- | --- | --- |
