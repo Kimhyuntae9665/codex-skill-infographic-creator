@@ -19,9 +19,9 @@ This Codex skill routes an information-design request to AntV or Graphviz, selec
 
 | 책임 경계와 핸드오프 | 상태·재검토 루프 |
 | --- | --- |
-| <img src="examples/rendered/clustered-workflow.svg" alt="책임 경계와 핸드오프" width="560"> | <img src="examples/rendered/state-review.svg" alt="상태와 재검토 루프" width="560"> |
+| <img src="examples/rendered/clustered-workflow-preview.svg" alt="책임 경계와 핸드오프" width="560"> | <img src="examples/rendered/state-review-preview.svg" alt="상태와 재검토 루프" width="560"> |
 | 필드 단위 연결 | 네트워크 토폴로지 |
-| <img src="examples/rendered/record-ports.svg" alt="필드 단위 연결" width="560"> | <img src="examples/rendered/network-topology.svg" alt="네트워크 토폴로지" width="560"> |
+| <img src="examples/rendered/record-ports-preview.svg" alt="필드 단위 연결" width="560"> | <img src="examples/rendered/network-topology-preview.svg" alt="네트워크 토폴로지" width="560"> |
 
 10개 전체 렌더와 적용 기준은 [examples/README.md](examples/README.md)에서 볼 수 있습니다. 예제의 내용은 구조를 설명하기 위한 가상 데이터입니다.
 
