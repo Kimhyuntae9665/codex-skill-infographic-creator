@@ -33,3 +33,10 @@ graphviz-gallery-catalog.md, and the focused selector in
 scripts/select-graphviz-pattern.py. Gallery source code and images are not
 vendored because licenses vary; only links, metadata, and original guidance
 are retained.
+
+Public distribution, 2026-09-06: this extended skill is maintained at
+https://github.com/Kimhyuntae9665/codex-skill-infographic-creator on the
+`main` branch. That repository contains the installable skill, original DOT
+starters, inspected SVG previews, catalog browser, MIT license, and CI checks.
+The AntV pinned commit above remains the provenance for the retained upstream
+syntax material; the public distribution repository does not replace it.
