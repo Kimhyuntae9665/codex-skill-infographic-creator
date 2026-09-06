@@ -1,0 +1,15 @@
+// Original hypothetical lineage. Branches show derivation only, not compatibility or support status.
+digraph lineage {
+  graph [rankdir=TB,bgcolor="transparent",pad=0.35,nodesep=0.45,ranksep=0.65,splines=polyline];
+  node [shape=box,style="rounded,filled",fillcolor="#F3F6FB",color="#BDCBDD",fontname="Malgun Gothic,Arial,sans-serif",fontsize=16,fontcolor="#17243B",margin="0.22,0.16"];
+  edge [color="#7186A4",penwidth=1.5,arrowsize=0.75];
+  root [label="기준 버전",fillcolor="#2855C7",fontcolor="white",color="#2855C7"];
+  a [label="분기 A"];
+  b [label="분기 B"];
+  a1 [label="A 개선안"];
+  a2 [label="A 실험안",fillcolor="#FFF4E8",color="#C48A54"];
+  b1 [label="B 개선안"];
+  root -> {a b};
+  a -> {a1 a2};
+  b -> b1;
+}

@@ -1,0 +1,14 @@
+// Original hypothetical causal map. Labels describe assumed direction; verify before use.
+digraph causal {
+  graph [layout=neato,overlap=false,bgcolor="transparent",pad=0.45,splines=curved];
+  node [shape=ellipse,style=filled,fillcolor="#F3F6FB",color="#BDCBDD",fontname="Malgun Gothic,Arial,sans-serif",fontsize=16,fontcolor="#17243B",margin="0.2,0.14"];
+  edge [fontname="Malgun Gothic,Arial,sans-serif",fontsize=12,color="#2855C7",fontcolor="#2855C7",penwidth=1.6,arrowsize=0.75];
+  clarity [label="기준의 명확성"];
+  rework [label="재작업"];
+  review [label="검토 여력"];
+  evidence [label="근거 확인"];
+  clarity -> rework [label="감소 가정",color="#9A4D0B",fontcolor="#9A4D0B"];
+  rework -> review [label="여력 증가 가정",color="#9A4D0B",fontcolor="#9A4D0B"];
+  review -> evidence [label="확인 강화 가정"];
+  evidence -> clarity [label="기준 보완 가정"];
+}

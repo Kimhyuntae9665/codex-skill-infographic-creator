@@ -1,0 +1,14 @@
+// Original hypothetical state transitions. Labels are conditions, not metrics.
+digraph review {
+  graph [rankdir=LR,bgcolor="transparent",pad=0.35,nodesep=0.7,ranksep=0.8,splines=spline];
+  node [shape=box,style="rounded,filled",fillcolor="#F3F6FB",color="#BDCBDD",fontname="Malgun Gothic,Arial,sans-serif",fontsize=17,fontcolor="#17243B",margin="0.25,0.2"];
+  edge [fontname="Malgun Gothic,Arial,sans-serif",fontsize=13,color="#2855C7",fontcolor="#2855C7",penwidth=1.6,arrowsize=0.8];
+  waiting [label="검토 대기"];
+  reviewing [label="검토 중"];
+  completed [label="검토 완료",fillcolor="#2855C7",fontcolor=white,color="#2855C7",peripheries=2];
+  revision [label="보완 필요",fillcolor="#FFF4E8",color="#C48A54"];
+  waiting -> reviewing [label="담당자 확인"];
+  reviewing -> completed [label="기준 충족"];
+  reviewing -> revision [label="근거 부족",color="#9A4D0B",fontcolor="#9A4D0B"];
+  revision -> reviewing [label="자료 보완",style=dashed,color="#9A4D0B",fontcolor="#9A4D0B",constraint=false];
+}

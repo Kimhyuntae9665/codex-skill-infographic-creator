@@ -1,0 +1,31 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install Graphviz
+        run: sudo apt-get update && sudo apt-get install -y graphviz
+      - name: Validate gallery catalog
+        run: python scripts/validate-gallery-catalog.py
+      - name: Test selector scenarios
+        run: |
+          python scripts/select-graphviz-pattern.py "팀별 책임 경계와 승인 재시도" --limit 5
+          python scripts/select-graphviz-pattern.py "수백 개 모듈 의존성과 커뮤니티" --limit 5
+          python scripts/select-graphviz-pattern.py "CPU 호출 병목" --limit 5
+      - name: Render and validate starters
+        run: python scripts/validate-starters.py
+      - name: Compile Python scripts
+        run: python -m py_compile scripts/select-graphviz-pattern.py scripts/validate-gallery-catalog.py scripts/validate-starters.py

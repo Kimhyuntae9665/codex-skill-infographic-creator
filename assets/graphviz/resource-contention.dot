@@ -1,0 +1,15 @@
+// Original hypothetical shared-resource map. Undirected links indicate access, not sequence.
+graph contention {
+  graph [layout=neato,overlap=false,bgcolor="transparent",pad=0.45,splines=line];
+  node [shape=box,style="rounded,filled",fillcolor="#F3F6FB",color="#BDCBDD",fontname="Malgun Gothic,Arial,sans-serif",fontsize=16,fontcolor="#17243B",margin="0.22,0.16"];
+  edge [color="#7186A4",penwidth=1.6];
+  worker_a [label="작업자 A"];
+  worker_b [label="작업자 B"];
+  worker_c [label="작업자 C"];
+  dataset [label="공유 데이터",shape=cylinder,fillcolor="#EDF3FF",color="#2855C7"];
+  device [label="공유 장비",shape=component,fillcolor="#FFF4E8",color="#C48A54"];
+  worker_a -- dataset;
+  worker_b -- dataset;
+  worker_b -- device;
+  worker_c -- device;
+}

@@ -1,0 +1,15 @@
+// Original profile skeleton. Add measured values only after collecting them.
+digraph profile {
+  graph [rankdir=LR,bgcolor="transparent",pad=0.35,nodesep=0.55,ranksep=0.8,splines=spline];
+  node [shape=box,style="rounded,filled",fillcolor="#F3F6FB",color="#BDCBDD",fontname="Malgun Gothic,Arial,sans-serif",fontsize=16,fontcolor="#17243B",margin="0.22,0.16"];
+  edge [fontname="Malgun Gothic,Arial,sans-serif",fontsize=12,color="#7186A4",fontcolor="#52617A",penwidth=1.5,arrowsize=0.75];
+  entry [label="진입 함수"];
+  parse [label="파싱\n측정값 입력"];
+  compute [label="계산\n측정값 입력"];
+  output [label="출력\n측정값 입력"];
+  cache [label="캐시 확인\n측정값 입력",fillcolor="#EDF3FF",color="#2855C7"];
+  entry -> parse [label="호출"];
+  parse -> compute [label="호출"];
+  compute -> output [label="호출"];
+  compute -> cache [label="호출"];
+}

@@ -1,0 +1,21 @@
+// Original hypothetical data contract; not a formal UML/ER schema.
+digraph contract {
+  graph [rankdir=LR,bgcolor="transparent",pad=0.35,nodesep=0.65,ranksep=1.2,splines=spline];
+  node [shape=plain,fontname="Malgun Gothic,Arial,sans-serif",fontsize=16,fontcolor="#17243B"];
+  edge [color="#2855C7",penwidth=1.7,arrowsize=0.8,fontname="Malgun Gothic,Arial,sans-serif",fontsize=13,fontcolor="#2855C7"];
+  source [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="18" COLOR="#BDCBDD">
+    <TR><TD WIDTH="190" BGCOLOR="#EDF3FF"><B>원자료</B></TD></TR>
+    <TR><TD PORT="date" ALIGN="LEFT">기준일</TD></TR>
+    <TR><TD PORT="value" ALIGN="LEFT">측정값 · 단위</TD></TR>
+    <TR><TD PORT="status" ALIGN="LEFT">결측 여부</TD></TR>
+  </TABLE>>];
+  rules [label=<<TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="18" COLOR="#BDCBDD">
+    <TR><TD WIDTH="190" BGCOLOR="#EDF3FF"><B>검증 규칙</B></TD></TR>
+    <TR><TD PORT="fresh" ALIGN="LEFT">오래된 값 구분</TD></TR>
+    <TR><TD PORT="unit" ALIGN="LEFT">단위 일치 확인</TD></TR>
+    <TR><TD PORT="missing" ALIGN="LEFT">누락값 분리</TD></TR>
+  </TABLE>>];
+  source:date:e -> rules:fresh:w [label="시점 대조"];
+  source:value:e -> rules:unit:w [label="정의 대조"];
+  source:status:e -> rules:missing:w [label="상태 대조"];
+}

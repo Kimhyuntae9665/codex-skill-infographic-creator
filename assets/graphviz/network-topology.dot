@@ -1,0 +1,17 @@
+// Original hypothetical topology. Links show connection only; they do not prove access or security.
+graph topology {
+  graph [layout=twopi,root=gateway,bgcolor="transparent",pad=0.12,ranksep=1.25,overlap=true,splines=line];
+  node [shape=box,style="rounded,filled",fillcolor="#F3F6FB",color="#BDCBDD",fontname="Malgun Gothic,Arial,sans-serif",fontsize=15,fontcolor="#17243B",margin="0.2,0.14"];
+  edge [color="#7186A4",penwidth=1.5];
+  gateway [label="게이트웨이",fillcolor="#2855C7",fontcolor="white",color="#2855C7"];
+  app [label="애플리케이션"];
+  data [label="데이터 계층"];
+  monitor [label="모니터링"];
+  client_a [label="클라이언트 A"];
+  client_b [label="클라이언트 B"];
+  database [label="데이터베이스",shape=cylinder];
+  archive [label="보관소",shape=cylinder];
+  gateway -- {app monitor client_a client_b};
+  app -- data;
+  data -- {database archive};
+}

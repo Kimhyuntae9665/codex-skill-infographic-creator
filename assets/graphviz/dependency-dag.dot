@@ -1,0 +1,18 @@
+// Original hypothetical dependency DAG. Replace labels and links with verified dependencies.
+digraph dependencies {
+  graph [rankdir=LR,bgcolor="transparent",pad=0.35,nodesep=0.55,ranksep=0.85,splines=spline];
+  node [shape=box,style="rounded,filled",fillcolor="#F3F6FB",color="#BDCBDD",fontname="Malgun Gothic,Arial,sans-serif",fontsize=16,fontcolor="#17243B",margin="0.22,0.17"];
+  edge [color="#2855C7",penwidth=1.7,arrowsize=0.8];
+  source [label="입력 자료"];
+  normalize [label="정의·단위 정리"];
+  rules [label="규칙 계산"];
+  exceptions [label="예외 분리",fillcolor="#FFF4E8",color="#C48A54"];
+  report [label="결과 작성"];
+  verify [label="출처 대조",fillcolor="#2855C7",fontcolor="white",color="#2855C7"];
+  source -> normalize;
+  normalize -> rules;
+  normalize -> exceptions;
+  rules -> report;
+  exceptions -> report;
+  report -> verify;
+}
